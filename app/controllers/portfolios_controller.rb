@@ -1,12 +1,22 @@
 class PortfoliosController < ApplicationController
+
+  # GET /portfolios
   def index
     @portfolio_items = Portfolio.all
   end
 
+
+  # GET /portfolios/new
   def new
     @portfolio_item = Portfolio.new
   end
 
+  # GET /blogs/1/edit
+  def edit
+    @portfolio_item = Portfolio.find(params[:id])
+  end
+
+  # POST /portfolios
   def create
     @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
 
@@ -17,10 +27,6 @@ class PortfoliosController < ApplicationController
         format.html { render :new }
       end
     end
-  end
-
-  def edit
-    @portfolio_item = Portfolio.find(params[:id])
   end
 
   # PATCH/PUT /blogs/1
@@ -35,6 +41,10 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  # GET /portfolios/1
+  def show
+    @portfolio_item = Portfolio.find(params[:id])
+  end
 
 
 end
