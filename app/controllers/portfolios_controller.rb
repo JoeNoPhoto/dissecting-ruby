@@ -1,10 +1,9 @@
+# Defining the Portfolio Controller
 class PortfoliosController < ApplicationController
-
   # GET /portfolios
   def index
     @portfolio_items = Portfolio.all
   end
-
 
   # GET /portfolios/new
   def new
@@ -19,7 +18,6 @@ class PortfoliosController < ApplicationController
   # POST /portfolios
   def create
     @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
-
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Portfolio item has been added.' }
@@ -52,11 +50,9 @@ class PortfoliosController < ApplicationController
     @portfolio_item = Portfolio.find(params[:id])
     # Destroy/delete the record
     @portfolio_item.destroy
-
     # Redirect
     respond_to do |format|
       format.html { redirect_to portfolios_url, notice: 'Portfolio record was destroyed.' }
     end
   end
-
 end
