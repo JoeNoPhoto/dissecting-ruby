@@ -3,6 +3,7 @@
     title: "Topic #{topic}"
   )
 end
+puts '3 topics created'
 
 10.times do |blog|
   Blog.create!(
@@ -11,7 +12,6 @@ end
     topic_id: Topic.last.id
   )
 end
-
 puts '10 blog posts created'
 
 5.times do |skill|
@@ -20,7 +20,6 @@ puts '10 blog posts created'
     percent_utilized: 15
   )
 end
-
 puts '5 skills created'
 
 8.times do |portfolio_item|
@@ -42,7 +41,6 @@ end
     thumb_image: 'http://via.placeholder.com/350x200'
   )
 end
-
 puts '9 portfolio items created'
 
 3.times do |technology|
@@ -50,6 +48,4 @@ puts '9 portfolio items created'
     name: "Technology #{technology}",
   )
 end
-
 puts '3 techonolgies created'
-
