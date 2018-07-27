@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
-  resources :portfolios
-  get 'pages/home'
-  get 'pages/about'
-  get 'pages/contact'
-  resources :blogs
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :portfolios, except: [:show]
+  get 'rubyrails-items', to: 'portfolios#rubyrails'
+  get 'javascript_items', to: 'portfolios#javacript'
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
 
   get 'about-me', to: 'pages#about'

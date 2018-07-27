@@ -5,6 +5,14 @@ class PortfoliosController < ApplicationController
     @portfolio_items = Portfolio.all
   end
 
+  def javascript
+    @javascript_portfolio_items = Portfolio.javascript
+  end
+
+  def rubyrails
+    @ruby_on_rails_portfolio_items = Portfolio.rubyrails
+  end
+
   # GET /portfolios/new
   def new
     @portfolio_item = Portfolio.new
