@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :portfolios, except: [:show]
   get 'rubyrails-items', to: 'portfolios#rubyrails'
   get 'javascript_items', to: 'portfolios#javacript'
