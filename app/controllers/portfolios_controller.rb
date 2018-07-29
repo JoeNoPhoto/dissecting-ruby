@@ -5,19 +5,23 @@ class PortfoliosController < ApplicationController
     @portfolio_items = Portfolio.all
   end
 
+  def javascript
+    @javascript_portfolio_items = Portfolio.javascript
+  end
+
+  def rubyrails
+    @ruby_on_rails_portfolio_items = Portfolio.rubyrails
+  end
+
   # GET /portfolios/new
   def new
     @portfolio_item = Portfolio.new
-  end
-
-  # GET /blogs/1/edit
-  def edit
-    @portfolio_item = Portfolio.find(params[:id])
+    3.times { @portfolio_item.technologies.build }
   end
 
   # POST /portfolios
   def create
-    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
+    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Portfolio item has been added.' }
@@ -25,6 +29,11 @@ class PortfoliosController < ApplicationController
         format.html { render :new }
       end
     end
+  end
+
+  # GET /blogs/1/edit
+  def edit
+    @portfolio_item = Portfolio.find(params[:id])
   end
 
   # PATCH/PUT /blogs/1
