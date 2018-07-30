@@ -6,7 +6,7 @@
 
     <meta name="keywords" content="<%= @seo_keywords %>" />
 
-    <%= stylesheet_link_tag    'application', 'data_turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'portfolios', 'data_turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data_turbolinks-track': 'reload' %>
   </head>
   <body>
@@ -23,6 +23,7 @@
     <% end %>
 
     <%= yield %>
+
 
     <% if session[:source] %>
       <p>Thanks for visiting me from <%= session[:source] %></p>

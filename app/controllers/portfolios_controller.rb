@@ -1,5 +1,7 @@
 # Defining the Portfolio Controller
 class PortfoliosController < ApplicationController
+  layout 'portfolio'
+
   # GET /portfolios
   def index
     @portfolio_items = Portfolio.all
