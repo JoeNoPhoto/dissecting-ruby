@@ -10,4 +10,12 @@ module DeviseWhitelist
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 
+  private
+
+  def portfolio_params
+    params.require(:portfolio).permit(:title,
+                                      :subtitle,
+                                      :body,
+                                      technologies_attributes: [:name])
+  end
 end
