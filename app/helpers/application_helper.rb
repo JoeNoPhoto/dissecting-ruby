@@ -17,4 +17,8 @@ module ApplicationHelper
       content_tag(:p, layout_page, class: "layout-greeting")
     end
   end
+
+  def copyright_generator
+    JoeNoCoViewTool::Renderer.copyright 'JoeNo Co.', 'All Rights Reserved'
+  end
 end
