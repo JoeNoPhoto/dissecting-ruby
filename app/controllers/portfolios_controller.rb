@@ -1,5 +1,6 @@
 # Defining the Portfolio Controller
 class PortfoliosController < ApplicationController
+  before_action :set_portfolio_item, only: [:edit, :update, :show, :destory]
   layout 'portfolio'
 
   # GET /portfolios
@@ -40,7 +41,6 @@ class PortfoliosController < ApplicationController
 
   # PATCH/PUT /blogs/1
   def update
-    @portfolio_item = Portfolio.find(params[:id])
     respond_to do |format|
       if @portfolio_item.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: 'Portfolio record(s) successfully updated.' }
@@ -52,13 +52,10 @@ class PortfoliosController < ApplicationController
 
   # GET /portfolios/1
   def show
-    @portfolio_item = Portfolio.find(params[:id])
   end
 
   # DELETE /blogs/1
   def destroy
-    # Perform the lookup
-    @portfolio_item = Portfolio.find(params[:id])
     # Destroy/delete the record
     @portfolio_item.destroy
     # Redirect
@@ -66,4 +63,9 @@ class PortfoliosController < ApplicationController
       format.html { redirect_to portfolios_url, notice: 'Portfolio record was destroyed.' }
     end
   end
+
+  def set_portfolio_item
+        @portfolio_item = Portfolio.find(params[:id])
+  end
+
 end
