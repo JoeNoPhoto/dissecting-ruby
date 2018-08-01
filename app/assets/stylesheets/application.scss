@@ -122,6 +122,11 @@ body {
   text-align: left;
 }
 
-.auth-links a {
-  color: black;
+.auth-links {
+  a {
+    color: black;
+  }
+  &.register-text {
+    text-align: right;
+  }
 }
