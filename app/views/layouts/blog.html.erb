@@ -9,12 +9,12 @@
     <%= stylesheet_link_tag    'blogs', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  
+
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= login_helper %>
+    <%= login_helper 'nav-link' %>
 
     <%= yield %>
 
