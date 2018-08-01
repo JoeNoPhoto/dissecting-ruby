@@ -6,7 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
-.vscode/settings.json
+/.vscode/settings.json
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -26,3 +26,4 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 *.jshintrc
+
