@@ -13,17 +13,19 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+  <body class="text-center">
+    <div class="cover-container container-fluid d-flex h-100 p-3 mx-auto flex-column">
 
-      <%= render 'shared/application_nav'  %>
+      <%= render 'shared/application_header'  %>
 
+      <main role="main" class="inner cover">
       <%= yield %>
+      </main>
 
       <%= render 'shared/application_footer'  %>
 
       <%= source_helper("application") %>
-      
+
     </div>
   </body>
 </html>
