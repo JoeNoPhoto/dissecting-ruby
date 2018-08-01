@@ -2,7 +2,7 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:edit, :update, :show, :destory]
   layout 'portfolio'
-  access all: [:show, :index, :javascript, :rubyrails],
+  access all: [:show, :index, :rubyrails],
          user: { except: [:destroy, :new, :create, :update, :edit] },
          site_admin: :all
   # GET /portfolios
@@ -10,12 +10,8 @@ class PortfoliosController < ApplicationController
     @portfolio_items = Portfolio.all
   end
 
-  def javascript
-    @javascript_portfolio_items = Portfolio.javascript
-  end
-
   def rubyrails
-    @ruby_on_rails_portfolio_items = Portfolio.rubyrails
+    @rubyrails_portfolio_items = Portfolio.rubyrails
   end
 
   # GET /portfolios/new
@@ -67,7 +63,6 @@ class PortfoliosController < ApplicationController
   end
 
   def set_portfolio_item
-        @portfolio_item = Portfolio.find(params[:id])
+    @portfolio_item = Portfolio.find(params[:id])
   end
-
 end
