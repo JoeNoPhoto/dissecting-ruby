@@ -117,16 +117,14 @@ body {
 * Custom Styles
 */
 
-.card-body {
+.card-body,
+.auth-links a {
   color: black;
-  text-align: left;
 }
 
-.auth-links {
-  a {
-    color: black;
-  }
-  &.register-text {
-    text-align: right;
-  }
-}
+// .login > .card {
+//   width: 22rem;
+//   // margin: 0 auto;
+//   // float: none;
+//   // margin-bottom: 10px;
+// }
