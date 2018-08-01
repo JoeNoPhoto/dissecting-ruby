@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/JoeNoPhoto/joe_no_co_view_tool
-  revision: 11e880e938a9948415b8ab6fffd58017bd186351
-  specs:
-    joe_no_co_view_tool (0.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -89,6 +83,7 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    joe_no_co_view_tool (0.1.0)
     jquery-rails (4.3.3)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -214,7 +209,7 @@ DEPENDENCIES
   devise (~> 4.4, >= 4.4.3)
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.5)
-  joe_no_co_view_tool!
+  joe_no_co_view_tool (~> 0.1.0)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
