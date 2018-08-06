@@ -9,11 +9,9 @@
           <%= link_to 'New Blog Post', new_blog_path, class: 'btn btn-md btn-outline-success' if logged_in?(:site_admin) %>
         </div>
       </div>
+      <%= paginate @blogs %>
       <%= render @blogs %>
-      <nav class="blog-pagination">
-        <a class="btn btn-outline-primary" href="#">Older</a>
-        <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-      </nav>
+      <%= paginate @blogs %>
     </div>
     <%= render 'shared/blog_sidebar' %>
   </div>
