@@ -5,7 +5,6 @@ class BlogsController < ApplicationController
          user: { except: [:destroy, :new, :create, :update, :edit] },
          site_admin: :all
 
-
   # GET /blogs
   # GET /blogs.json
   def index
@@ -84,7 +83,8 @@ class BlogsController < ApplicationController
     @blog = Blog.friendly.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet
+  # only allow the white list through.
   def blog_params
     params.require(:blog).permit(:title, :body)
   end
