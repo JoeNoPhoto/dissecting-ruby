@@ -13,7 +13,7 @@
   <body>
     <%= render 'shared/portfolio_header' %>
     <main role="main" class="container">
-      <%= render 'shared/portfolio_jumbotron' %>
+      <%= render 'shared/portfolio_jumbotron' if @portfolio_jumbotron %>
         <%= yield %>
     </main>
     <%= render 'shared/portfolio_footer' %>

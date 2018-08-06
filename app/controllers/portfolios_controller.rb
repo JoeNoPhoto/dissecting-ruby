@@ -8,6 +8,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios
   def index
     @portfolio_items = Portfolio.all
+    @portfolio_jumbotron = true
   end
 
   def rubyrails
@@ -50,6 +51,7 @@ class PortfoliosController < ApplicationController
 
   # GET /portfolios/1
   def show
+    @portfolio_jumbotron = true
   end
 
   # DELETE /blogs/1
