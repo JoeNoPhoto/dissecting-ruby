@@ -30,3 +30,6 @@
 
 .erb-lint.yml
 .vscode/tasks.json
+.rubocop.yml
+.rubocop_todo.yml
+.gitignore
