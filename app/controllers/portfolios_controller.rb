@@ -7,7 +7,7 @@ class PortfoliosController < ApplicationController
          site_admin: :all
   # GET /portfolios
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.by_position
     @portfolio_jumbotron = true
   end
 

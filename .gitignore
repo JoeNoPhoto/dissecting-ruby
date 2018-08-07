@@ -28,3 +28,5 @@
 *.jshintrc
 
 
+.erb-lint.yml
+.vscode/tasks.json
