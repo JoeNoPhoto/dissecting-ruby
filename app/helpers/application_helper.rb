@@ -1,12 +1,28 @@
 module ApplicationHelper
-  def login_helper style
+  def login_or_register_items
+    [
+      {
+        url: new_user_registration_path,
+        title: 'Register'
+      },
+      {
+        url: new_user_session_path,
+        title: 'Login'
+      }
+    ]
+  end
+
+  def login_helper(style, _tag_type=nil)
+    login_link = ''
     if current_user.is_a?(GuestUser)
-      (link_to 'Register', new_user_registration_path, class: style) +
-      " ".html_safe +
-      (link_to 'Login', new_user_session_path, class: style)
+      login_or_register_items.each do |item|
+        login_link << "#{_tag_type}<a href='#{item[:url]}' class='#{style}'> #{item[:title]}</a>"
+      end
+      login_link.html_safe
     else
-      link_to 'Logout', destroy_user_session_path, method: :delete, class: style
+      login_link << "#{_tag_type}<a href='#{destroy_user_session_path}' data-method='#{:delete}' class='#{style}'>Logout</a>"
     end
+    login_link.html_safe
   end
 
   def source_helper layout_name
