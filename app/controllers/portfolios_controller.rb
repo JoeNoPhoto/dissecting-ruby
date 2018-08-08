@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:edit, :update, :show, :destory]
   layout 'portfolio'
   access all: [:show, :index, :rubyrails],
-         user: { except: [:destroy, :new, :create, :update, :edit] },
+         user: { except: [:destroy, :new, :create, :update, :edit, :sort] },
          site_admin: :all
   # GET /portfolios
   def index
