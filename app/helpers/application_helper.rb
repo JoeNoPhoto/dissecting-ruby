@@ -12,16 +12,6 @@ module ApplicationHelper
     ]
   end
 
-  def logout_item
-    [
-      {
-        url: destroy_user_session_path,
-        title: 'Logout',
-        method: :delete
-      }
-    ]
-  end
-
   def login_helper(style, _tag_type=nil)
     login_link = ''
     if current_user.is_a?(GuestUser)
@@ -30,11 +20,9 @@ module ApplicationHelper
       end
       login_link.html_safe
     else
-      logout_item.each do |item|
-        login_link << "#{_tag_type}<a href='#{item[:url]}' data-method='#{item[:method]}' class='#{style}'> #{item[:title]}</a>"
-      end
-      login_link.html_safe
+      login_link << "#{_tag_type}<a href='#{destroy_user_session_path}' data-method='#{:delete}' class='#{style}'>Logout</a>"
     end
+    login_link.html_safe
   end
 
   def source_helper layout_name
