@@ -1,6 +1,5 @@
 module DeviseWhitelist
   extend ActiveSupport::Concern
-
   included do
     before_action :configure_permitted_parameters, if: :devise_controller?
   end
@@ -16,6 +15,8 @@ module DeviseWhitelist
     params.require(:portfolio).permit(:title,
                                       :subtitle,
                                       :body,
+                                      :main_image,
+                                      :thumb_image,
                                       technologies_attributes: [:name])
   end
 end

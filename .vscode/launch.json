@@ -28,6 +28,16 @@
       ]
     },
     {
+      "name": "Rails console",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "program": "${workspaceRoot}/bin/rails",
+      "args": [
+        "console"
+      ]
+    },
+    {
       "name": "RSpec - all",
       "type": "Ruby",
       "request": "launch",
