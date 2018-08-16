@@ -160,3 +160,24 @@ h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+/*
+ * Custom
+ */
+
+ .sidebar__link {
+   font-size: 1em;
+ }
+
+.comment-card {
+
+  .comment-attribution {
+    color: rgb(138, 138, 138);
+    font-size: .7em;
+    padding-bottom: 2px
+  }
+
+  .comment-body {
+    padding-left: 10px;
+  }
+}
