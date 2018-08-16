@@ -7,7 +7,10 @@ class Blog < ApplicationRecord
   friendly_id :title, use: :slugged
 
   validates :title, :body, presence: true
+
   belongs_to :topic, optional: true
+
+  has_many :comments, dependent: :destroy
 
   def self.special_blogs
     all
