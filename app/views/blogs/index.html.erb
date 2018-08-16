@@ -1,11 +1,11 @@
   <div class="row">
+    <div class="new-blog-button">
+      <%= link_to 'New Blog Post', new_blog_path, class: 'btn btn-md btn-outline-success' if logged_in?(:site_admin) %>
+    </div>
     <div class="col-md-8 blog-main">
       <div class="d-flex border-bottom">
         <div class="flex-grow-1">
           <h3 class="mb-4 font-italic">From the Firehose</h3>
-        </div>
-        <div class="new-blog-button">
-          <%= link_to 'New Blog Post', new_blog_path, class: 'btn btn-md btn-outline-success' if logged_in?(:site_admin) %>
         </div>
       </div>
       <%= paginate @blogs %>
