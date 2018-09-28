@@ -7,9 +7,9 @@ module SocialTool
       config.access_token_secret = Rails.application.credentials.dig(:twitter, :access_token_secret)
     end
 
-    client.search("rails", result_type: "recent")
-      .take(3).collect do |tweet|
-        "#{tweet.user.screen_name}: #{tweet.text}"
+    client.search("#tnf", result_type: "recent")
+          .take(10).collect do |tweet|
+      "#{tweet.user.screen_name}: #{tweet.text}"
     end
   end
 end
